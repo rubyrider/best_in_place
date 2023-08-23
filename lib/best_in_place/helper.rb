@@ -15,7 +15,7 @@ module BestInPlace
 
       display_value = best_in_place_build_value_for(real_object, field, opts)
 
-      value = real_object.send(field)
+      value = real_object.method(field).call
 
       if opts[:collection] or type == :checkbox
         collection = opts[:collection]
